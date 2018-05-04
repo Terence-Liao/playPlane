@@ -60,7 +60,7 @@ function Selectplane(index){
                 arry[0].className = 'myPlane1';
                 break;
             case 1:
-                arry[1].src = 'images/plane/LxPlane.png';
+                arry[1].src = 'images/plane/LXPlane.png';
                 arry[1].biu = 'images/biu/blue.png';
                 arry[1].className = 'myPlane2';
                 break;
