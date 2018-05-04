@@ -1,0 +1,173 @@
+@charset "utf-8";
+body{
+    width: 100%;
+    height: 100%;
+    background: url('../images/map/map1.png')no-repeat center/cover;
+}
+#box {
+    margin:	18vh auto;
+    width:	85.3vw;
+    height:	78vh;
+}
+#box img.myPlane1{
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 20.3vw;
+    height: 7.4vh;
+}
+#box img.myPlane2{
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin-left: 23.8vw;
+    width: 20.3vw;
+    height: 7.4vh;
+}
+#box img.myPlane3{
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin-left: 48.3vw;
+    width: 20.3vw;
+    height: 7.4vh;
+}
+#box img.myPlane4{
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin-left: 71vw;
+    width: 20.3vw;
+    height: 7.4vh;
+}
+#box h2.title{
+    position: absolute;
+    top: 30%;
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:12.3vw;
+    font-weight:bold;
+    color: #ffff;
+
+}
+#box	h2{
+    text-align:	center;
+    font-size:	7.5vw;
+    color: #ffff;
+    font-weight: bolder;
+}
+#box .gameover	.ap{
+    margin-top:	2.2vh !important;
+}
+#box > p{
+    width:	40vw;
+    margin:	17.6vw	auto;
+    background:	#fff;
+    line-height:	4.5vh;
+    color:	#000;
+    font-size:	4.3vw;
+    text-align:	center;
+    cursor:	pointer;
+}
+#box p.boss{
+    font-weight:	bold;
+    background:		#ffff99;
+    color:	#ff3366;
+}
+#box > p:hover{
+    color:	#fff;
+    background:	#ff6666;
+}
+#box .plane,#box .Boom2{
+    position:	absolute;
+    width:	21.3vw;
+    height: 8.4vh;
+}
+#box	.bullet{
+    position:	absolute;
+    width:	3.2vw;
+    height:	6.6vh;
+}
+#box	.bullet2{
+    position:	absolute;
+    width:	3.2vw;
+    height:	6.6vh;
+}
+#box	.bullet3{
+    position:	absolute;
+    width:	3.2vw;
+    height:	6.6vh;
+}
+#box .Boom{
+    position: absolute;
+    width:	14.1vw;
+    height:	9vh;
+}
+#box .bossBoom{
+    position: absolute;
+    width: 23.5vw;
+    height: 13vh;
+}
+#box .enemy{
+    position:	absolute;
+    width:	8vw;
+    height: 15.3vh;
+}
+#box .enemyBoss{
+    z-index: 88;
+    position:	absolute;
+    width: 23.5vw;
+    height: 13vh;
+}
+#box .score{
+    z-index: 50;
+    position:	absolute;
+    top:	0;
+    left:	2.7vw;
+    line-height: 3.7vh;
+    color:	#fff;
+    font-size:	5.3vw;
+    font-weight:	bold;
+}
+#box .gameover{
+    margin: 0 auto;
+    width:	53.3vw;
+    height:	60vh;
+}
+#box .blood{
+    position: absolute;
+    background: #ff3a00;
+    width: 23.5vw;
+    height: .4vh;
+}
+#box .df{
+    color: #fff;
+}
+#box .gameover	h2{
+    font-size:	9.1vw;
+    color:	#f55;
+    line-height:	12.9vh;
+    font-weight:	bolder;
+    text-align:	center;
+}
+#box .gameover	p{
+    text-align:	center;
+    font-size: 4.8vw;
+    color: #fff;
+}
+#box .gameover	p	span{
+    font-size:	5.9vw;
+    color:	#ffcc00;
+    font-weight:	bolder;
+}
+#box .gameover .restart{
+    display:	block;
+    margin:	13.3vw auto 0;
+    width:	26.7vw;
+    background:	#ffcc99;
+    font-weight:	bolder;
+    font-size:	4.3vw;
+    color: #fff;
+    line-height:	6vh;
+    text-align:	center;
+    cursor:	pointer;
+}

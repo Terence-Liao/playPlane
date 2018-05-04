@@ -1,0 +1,65 @@
+<!doctype html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="Generator" content="EditPlus®">
+			<meta name="Author" content="加瓦斯库瑞普特">
+			<meta name="Keywords" content="搜索">
+			<meta name="Description" content="">
+			<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+			<meta name="apple-mobile-app-capable" content="yes">
+			<meta name="apple-mobile-app-status-bar-style" content="black">
+			<link rel="stylesheet" href="css/pc.css">
+			<link rel="stylesheet" type="text/css" href="css/moblie.css"  media="all and (max-width: 1024px)">
+			<title>Please Enter Your Title</title>
+			<style type="text/css">
+				body, h1, h2, h3, h4, h5, h6, p, dd, ul, ol, dl, div, input	{
+					margin: 0;
+					-webkit-box-sizing: border-box;
+					box-sizing: border-box;
+					-webkit-tap-highlight-color: transparent;
+				}
+				ul,ol,dl	{
+					padding:0;
+					list-style:none;
+				}
+				img	{
+					border:none;
+					border:none;
+					vertical-align:middle;
+				}
+				a	{
+					text-decoration:none;
+					color:#000;
+					outline:none;
+				}
+				body{
+					font:12px/1.5 'Microsoft Yahei',sans-serif;
+					overflow: hidden;
+				}
+				input	{
+					border: none;
+					-webkit-appearance:	none;
+					-moz-appearance:	none;
+					appearance:	none;
+				}
+			</style>
+		</head>
+		<body>
+			<div id="box">				
+			</div>
+			<script>
+				var aBody = document.querySelector('body');
+				if( document.documentElement.clientWidth>=1024){
+					var scr = document.createElement('script');
+                    scr.src = 'js/pc.js';
+                    aBody.appendChild(scr);
+				}else{
+                    var scr = document.createElement('script');
+                    scr.src = 'js/moblie.js';
+                    aBody.appendChild(scr);
+				}
+			</script>
+		</body>
+	</html>
