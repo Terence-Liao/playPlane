@@ -7,8 +7,8 @@
 
 ### 效果演示
 :point_right: [在线预览](http://www.baidu.com'飞机大战')<br>
-![]https://github.com/junephone/Plane/blob/master/images/moblie.png<br>
-![]https://github.com/junephone/Plane/blob/master/images/pc.png<br>
+![](https://github.com/junephone/playPlane/blob/master/images/moblie.png)<br>
+![](https://github.com/junephone/playPlane/blob/master/images/pc.png)<br>
 
 
 
@@ -65,7 +65,7 @@ ___
 就像通过合同书继承资产一样。。几千万一张纸的事情啊！:flushed:
 
 ### 喜欢的话欢迎star和fork哦后续会出很多小项目:wink:!!
-![]https://github.com/junephone/Plane/blob/master/images/star.jpg<br>
+![](https://github.com/junephone/playPlane/blob/master/images/star.jpg)<br>
 
 
 
