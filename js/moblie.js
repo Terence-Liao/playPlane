@@ -60,7 +60,7 @@ function Selectplane(index){
                 arry[0].className = 'myPlane1';
                 break;
             case 1:
-                arry[1].src = 'images/plane/LxPlane.png';
+                arry[1].src = 'images/plane/LXPlane.png';
                 arry[1].biu = 'images/biu/blue.png';
                 arry[1].className = 'myPlane2';
                 break;
@@ -78,7 +78,7 @@ function Selectplane(index){
     }
     arry.find(item=>{
         divs.appendChild(item);
-    })
+    });
     aBox.appendChild(divs);
     aBox.appendChild(text);
     arry.find(item=>{
@@ -90,7 +90,8 @@ function Selectplane(index){
             };
             var startGame = new Start(index,data,this.src,this.biu)
         }
-    })
+     }
+    )
 };
 //开始游戏
 function Start(index,data,planeSrc,bluSrc){
@@ -463,6 +464,7 @@ function Boss(index,Bosrc){
     this.timersBB;
     this.blood = 0;
 };
+
 Boss.prototype={
     exe:function(){
         this.bornBoss();
