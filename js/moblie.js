@@ -218,10 +218,10 @@ Plane.prototype = {
     },
     biuSpeed: function(){
         switch(this.index){
-            case 0: this.speed = 200;break;
-            case 1: this.speed = 150;break;
-            case 2: this.speed = 100;break;
-            case 3: this.speed = 50;break;
+            case 0: this.speed = 250;break;
+            case 1: this.speed = 200;break;
+            case 2: this.speed = 150;break;
+            case 3: this.speed = 100;break;
         }
     },
     biuSport: function(){
@@ -304,10 +304,10 @@ Enemy.prototype = {
     //敌军下落速度
     landSpeed: function(){
         switch(this.index){
-            case 0: this.speed = 666;this.moveS=2.5;break;
-            case 1: this.speed = 500;this.moveS = 3.5;break;
-            case 2: this.speed = 400;this.moveS = 4.5;break;
-            case 3: this.speed = 350;this.moveS = 5.5;break;
+            case 0: this.speed = 200;this.moveS= 3.7;break;
+            case 1: this.speed = 300;this.moveS = 4.6;break;
+            case 2: this.speed = 400;this.moveS = 5.5;break;
+            case 3: this.speed = 500;this.moveS = 6.5;break;
         }
     },
     //生成敌军
@@ -506,10 +506,10 @@ Boss.prototype={
     },
     bossBlood(){
         switch (this.index){
-            case 0:	this.blood = 300;break;
-            case 1:	this.blood = 550;break;
-            case 2:	this.blood = 700;break;
-            case 3:   this.blood = 1050;break;
+            case 0:	this.blood = 30;break;
+            case 1:	this.blood = 60;break;
+            case 2:	this.blood = 90;break;
+            case 3:   this.blood = 120;break;
         }
     },
     bossShow(){
@@ -535,8 +535,9 @@ Boss.prototype={
             if( this.collision( bigBoss,allBius[i] ) && allBius[i].parentNode ){
                 bigBoss.biuAmount++;
                 blood.style.width = (1-(bigBoss.biuAmount/this.blood).toFixed(2)) * 100 +'%';
+                aBox.removeChild(allBius[i]);
+                cancelAnimationFrame( allBius[i].timer );
                 if(bigBoss.biuAmount == this.blood){
-                    cancelAnimationFrame( allBius[i].timer );
                     cancelAnimationFrame( bigBoss.timer );
                     var biuAudio = document.createElement('audio');
                     biuAudio.src = 'images/music/game_over.mp3';
@@ -552,7 +553,6 @@ Boss.prototype={
                     setTimeout(function(){
                         boom.parentNode && aBox.removeChild( boom );
                     },500);
-                    aBox.removeChild(allBius[i]);
                     aBox.removeChild(bigBoss);
                     score += 50;
                     var aS = aBox.querySelector('span.score');
