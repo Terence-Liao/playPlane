@@ -4,9 +4,14 @@
 个人觉得面向对象编程主要难在对原型的理解还有原型链，继承还有构造函数等等，只要逐个将这些知识点理解领悟，面向对象编程这个
 就轻易上手了:muscle:!
 
+### 注意
+
+此项目刚开始会点显示慢卡！需要缓存！强烈建议使用chrome、fireFox、UC等浏览器运行
+vw、vh等暂时不是兼容ios7,8,9的Safari的浏览器，所以不显示！拒绝IE从我做起:muscle:!
+
 
 ### 效果演示
-:point_right: [在线预览](http://www.baidu.com'飞机大战')<br>
+:point_right: [在线预览](https://junephone.github.io/playPlane/%E6%89%93%E9%A3%9E%E6%9C%BA.html'飞机大战')<br>
 ![](https://github.com/junephone/playPlane/blob/master/images/moblie.png)<br>
 ![](https://github.com/junephone/playPlane/blob/master/images/pc.png)<br>
 
