@@ -11,7 +11,7 @@
 
 
 ### 效果演示
-:point_right: [在线预览](https://junephone.github.io/playPlane/%E6%89%93%E9%A3%9E%E6%9C%BA.html "飞机大战")<br>
+:point_right: [在线预览](https://junephone.github.io/playPlane/index.html "飞机大战")<br>
 
 ![](https://github.com/junephone/playPlane/blob/master/images/moblie.png)<br>
 ![](https://github.com/junephone/playPlane/blob/master/images/pc.png)<br>
