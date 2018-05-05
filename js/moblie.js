@@ -124,89 +124,89 @@ function Start(index,data,planeSrc,bluSrc){
 function Plane(mouse,plaeImg,aBox,index,bluSrc){
     this.aPlane = new Image();
     this.aPlane.src = plaeImg;
-    this.aPlane.style.left = mouse.x-this.aPlane.width/2 + 'vw';
-    this.aPlane.style.top = mouse.y-this.aPlane.height/2 + 'vh';
+    this.aPlane.style.left = mouse.x-this.aPlane.width/2 + 'px';
+    this.aPlane.style.top = mouse.y-this.aPlane.height/2 + 'px';
     this.aPlane.className = 'plane';
     this.index = index;
     this.speed = 266;
     this.aBox = aBox;
     this.biuSrc = bluSrc;
     aBox.appendChild(this.aPlane);
-     var This = this;
-     var flag = false;
-     var cur = {x:0,y:0};
-     var nx,ny,planeX,planeY,left_,top_,leMin,leMax,tpMin,tpMax;
-     function down(){
-         flag=true;
-         var touch;
-         if(event.touches){
-             touch = event.touches[0];
-         }else {
-             touch = event;
-         }
-         cur.x = touch.clientX;
-         cur.y = touch.clientY;
-         planeX = This.aPlane.offsetLeft;
-         planeY = This.aPlane.offsetTop;
-     }
-     function move(){
-         if(flag){
-             var touch;
-             if(event.touches){
-                 touch = event.touches[0];
-             }else {
-                 touch = event;
-             }
-             nx = touch.clientX - cur.x;
-             ny = touch.clientY - cur.y;
-             left_ = nx + planeX;
-             top_ = ny +  planeY;
+    var This = this;
+    var flag = false;
+    var cur = {x:0,y:0};
+    var nx,ny,planeX,planeY,left_,top_,leMin,leMax,tpMin,tpMax;
+    function down(){
+        flag=true;
+        var touch;
+        if(event.touches){
+            touch = event.touches[0];
+        }else {
+            touch = event;
+        }
+        cur.x = touch.clientX;
+        cur.y = touch.clientY;
+        planeX = This.aPlane.offsetLeft;
+        planeY = This.aPlane.offsetTop;
+    }
+    function move(){
+        if(flag){
+            var touch;
+            if(event.touches){
+                touch = event.touches[0];
+            }else {
+                touch = event;
+            }
+            nx = touch.clientX - cur.x;
+            ny = touch.clientY - cur.y;
+            left_ = nx + planeX;
+            top_ = ny +  planeY;
 
-                leMin = 0;
-                 leMax = document.documentElement.clientWidth - (This.aPlane.width);
-                 tpMin = 0;
-                 tpMax = document.documentElement.clientHeight - (This.aPlane.height);
+            leMin = 0;
+            leMax = document.documentElement.clientWidth - (This.aPlane.width);
+            tpMin = 0;
+            tpMax = document.documentElement.clientHeight - (This.aPlane.height);
 
-             //限制飞机的left,top值
-             left_ = Math.min(left_,leMax);
-             left_ = Math.max(leMin,left_);
-             top_ = Math.min(tpMax,top_);
-             top_ = Math.max(top_,tpMin);
+            //限制飞机的left,top值
+            left_ = Math.min(left_,leMax);
+            left_ = Math.max(leMin,left_);
+            top_ = Math.min(tpMax,top_);
+            top_ = Math.max(top_,tpMin);
 
-             This.aPlane.style.left  = left_ + 'vw';
-             This.aPlane.style.top = top_ +'vh';
-             document.addEventListener('touchstart', function(event) {
-                 // 判断默认行为是否可以被禁用
-                 if (event.cancelable) {
-                     // 判断默认行为是否已经被禁用
-                     if (!event.defaultPrevented) {
-                         event.preventDefault();
-                     }
-                 }
-             },  { passive: false });
+            This.aPlane.style.left  = left_ + 'px';
+            This.aPlane.style.top = top_ +'px';
+            document.addEventListener('touchstart', function(event) {
+                // 判断默认行为是否可以被禁用
+                if (event.cancelable) {
+                    // 判断默认行为是否已经被禁用
+                    if (!event.defaultPrevented) {
+                        event.preventDefault();
+                    }
+                }
+            },  { passive: false });
 
-         }
-     }
-     function end(){
-         flag = false;
-     }
-     var aPlane = document.querySelector('.plane');
-     aPlane.addEventListener('mousedown',function(){
-         down();
-     },false)
-     aPlane.addEventListener('touchstart',function(){
+        }
+    }
+    function end(){
+        flag = false;
+    }
+    var aPlane = document.querySelector('.plane');
+    aPlane.addEventListener('mousedown',function(){
         down();
     },false)
-     aPlane.addEventListener('touchmove',function(){
+    aPlane.addEventListener('touchstart',function(){
+        down();
+    },false)
+    aPlane.addEventListener('touchmove',function(){
         move();
     },false)
-     aPlane.addEventListener('mousesmove',function(){
+    aPlane.addEventListener('mousesmove',function(){
         move();
     },false)
-     aPlane.addEventListener('mousesup',function(){
+    aPlane.addEventListener('mousesup',function(){
         end();
     },false)
-     aPlane.addEventListener('touchend',function(){
+    aPlane.addEventListener('touchend',function(){
         end();
     },false)
 }
@@ -235,8 +235,8 @@ Plane.prototype = {
             biuAudio.autoplay = true;
             aBiu.src = This.biuSrc;
             aBiu.className = 'bullet';
-            aBiu.style.left = This.aPlane.offsetLeft + This.aPlane.width/2 - aBiu.width/2 + 'vw';
-            aBiu.style.top = This.aPlane.offsetTop - aBiu.height + 'vh';
+            aBiu.style.left = This.aPlane.offsetLeft + This.aPlane.width/2 - aBiu.width/2 + 'px';
+            aBiu.style.top = This.aPlane.offsetTop - aBiu.height + 'px';
             This.aBox.appendChild(aBiu);
             This.aBox.appendChild(biuAudio);
             move();
@@ -248,7 +248,7 @@ Plane.prototype = {
                         return;
                     }
                     aBiu.timer = requestAnimationFrame(move);
-                    aBiu.style.top = aBiu.offsetTop -5 + 'vh';
+                    aBiu.style.top = aBiu.offsetTop -5 + 'px';
                 }
             };
             return timer;
@@ -268,8 +268,8 @@ Plane.prototype = {
                 var aBiu1 = new Image();
                 aBiu1.src = This.biuSrc;
                 aBiu1.className = 'bullet';
-                aBiu1.style.left = This.aPlane.offsetLeft + This.aPlane.width/2 - aBiu1.width/2+aBiu1.width*_deviation + 'vw';
-                aBiu1.style.top = This.aPlane.offsetTop - aBiu1.height + 'vh';
+                aBiu1.style.left = This.aPlane.offsetLeft + This.aPlane.width/2 - aBiu1.width/2+aBiu1.width*_deviation + 'px';
+                aBiu1.style.top = This.aPlane.offsetTop - aBiu1.height + 'px';
                 This.aBox.appendChild(aBiu1);
                 move1();
                 function move1(){
@@ -279,7 +279,7 @@ Plane.prototype = {
                             return;
                         }
                         aBiu1.timer = requestAnimationFrame(move1);
-                        aBiu1.style.top = aBiu1.offsetTop -5 + 'vh';
+                        aBiu1.style.top = aBiu1.offsetTop -5 + 'px';
                     }
                 };
 
@@ -318,12 +318,12 @@ Enemy.prototype = {
             var aEnemy = new Image();
             aEnemy.src = 'images/enemy/enemy1.png';
             aEnemy.className = 'enemy';
-            aEnemy.style.left = Math.random() * document.documentElement.clientWidth - aEnemy.width/2 + 'vw';
+            aEnemy.style.left = Math.random() * document.documentElement.clientWidth - aEnemy.width/2 + 'px';
             /*
              [0,1);
              [0,aBox.clientWidth)=>[-aEnemy.width/2 + 'px',aBox.clientWidth - aEnemy.width/2 + 'px'];
              */
-            aEnemy.style.top = -aEnemy.height + 'vh';
+            aEnemy.style.top = -aEnemy.height + 'px';
             aBox.appendChild(aEnemy);
             land();
             This.S = This.moveS + Math.random()*2;
@@ -333,7 +333,7 @@ Enemy.prototype = {
                         aBox.removeChild(aEnemy);
                         return;
                     }
-                    aEnemy.style.top = aEnemy.offsetTop + This.S + 'vh';
+                    aEnemy.style.top = aEnemy.offsetTop + This.S + 'px';
                     aEnemy.timer = requestAnimationFrame( land );
                     This.enemyTest(aEnemy);
                     /*testing( aEnemy,aPlane,timers,aS );*/
@@ -378,8 +378,8 @@ Enemy.prototype = {
             var boom = new Image();
             boom.src = 'images/biu/boom_big.png';
             boom.className = 'Boom';
-            boom.style.left = aEnemy.offsetLeft + 'vw';
-            boom.style.top = aEnemy.offsetTop + 'vh';
+            boom.style.left = aEnemy.offsetLeft + 'px';
+            boom.style.top = aEnemy.offsetTop + 'px';
             var This = this;
             setTimeout(function(){
                 aBox.removeChild( boom );
@@ -413,8 +413,8 @@ Enemy.prototype = {
                 boom.width = 23;
                 boom.height = 30;
                 boom.className = 'Boom';
-                boom.style.left = aEnemy.offsetLeft + 'vw';
-                boom.style.top = aEnemy.offsetTop + 'vh';
+                boom.style.left = aEnemy.offsetLeft + 'px';
+                boom.style.top = aEnemy.offsetTop + 'px';
                 aBox.appendChild( boom );
                 aBox.appendChild(biuAudio);
                 setTimeout(function(){
@@ -481,8 +481,8 @@ Boss.prototype={
                 blood.className = 'blood';
                 enemyBoss.src =	This.sRc;
                 enemyBoss.className	='enemyBoss';
-                bigBoss.style.left =  Math.random() * document.documentElement.clientWidth-enemyBoss.width/2+'vw';
-                bigBoss.style.top = -enemyBoss.height-180+'vh';
+                bigBoss.style.left =  Math.random() * document.documentElement.clientWidth-enemyBoss.width/2+'px';
+                bigBoss.style.top = -enemyBoss.height-180+'px';
                 bigBoss.biuAmount = 0;
                 bigBoss.appendChild(enemyBoss);
                 bigBoss.appendChild(blood);
@@ -494,7 +494,7 @@ Boss.prototype={
                             aBox.removeChild(bigBoss);
                             return;
                         }
-                        bigBoss.style.top = bigBoss.offsetTop + 1 + 'vh';
+                        bigBoss.style.top = bigBoss.offsetTop + 1 + 'px';
                         bigBoss.timer = requestAnimationFrame( land );
                         This.enemyTest(bigBoss,blood);
                         /*testing( aEnemy,aPlane,timers,aS );*/
@@ -545,8 +545,8 @@ Boss.prototype={
                     var boom = new Image();
                     boom.src = 'images/biu/boom_big.png';
                     boom.className = 'bossBoom';
-                    boom.style.left = bigBoss.offsetLeft + 'vw';
-                    boom.style.top = bigBoss.offsetTop + 'vh';
+                    boom.style.left = bigBoss.offsetLeft + 'px';
+                    boom.style.top = bigBoss.offsetTop + 'px';
                     aBox.appendChild( boom );
                     aBox.appendChild(biuAudio);
                     setTimeout(function(){
@@ -585,8 +585,8 @@ Boss.prototype={
             var boom = new Image();
             boom.src = 'images/biu/boom_big.png';
             boom.className = 'bossBoom';
-            boom.style.left = enemyBoss.offsetLeft + 'vw';
-            boom.style.top = enemyBoss.offsetTop + 'vh';
+            boom.style.left = enemyBoss.offsetLeft + 'px';
+            boom.style.top = enemyBoss.offsetTop + 'px';
             var biuAudio = document.createElement('audio');
             biuAudio.src = 'images/music/enemy3_down.mp3';
             biuAudio.volume = 1;
