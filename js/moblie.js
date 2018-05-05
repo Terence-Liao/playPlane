@@ -175,15 +175,6 @@ function Plane(mouse,plaeImg,aBox,index,bluSrc){
 
             This.aPlane.style.left  = left_ + 'px';
             This.aPlane.style.top = top_ +'px';
-            document.addEventListener('touchstart', function(event) {
-                // 判断默认行为是否可以被禁用
-                if (event.cancelable) {
-                    // 判断默认行为是否已经被禁用
-                    if (!event.defaultPrevented) {
-                        event.preventDefault();
-                    }
-                }
-            },  { passive: false });
 
         }
     }
@@ -209,6 +200,14 @@ function Plane(mouse,plaeImg,aBox,index,bluSrc){
     aPlane.addEventListener('touchend',function(){
         end();
     },false)
+
+    stop();
+    var mo=function(e){e.preventDefault();};
+    function stop(){
+        document.body.style.overflow='hidden';
+        document.addEventListener("touchmove",mo,false);//禁止页面滑动
+    }
+
 }
 Plane.prototype = {
     biu: function(){
@@ -439,15 +438,17 @@ Enemy.prototype = {
         aH.innerHTML = 'Game Over';
         aSpa.innerHTML = '重新开始';
         aP.innerHTML = '您的得分是<span>&nbsp'+score+'</span>';
-        aSpa.onclick = function(){
-            Init();
-        };
         aDiv.className = 'gameover';
         aH.className = 'animated rubberBand';
         aDiv.appendChild(aH);
         aDiv.appendChild(aP);
         aDiv.appendChild(aSpa);
         aBox.appendChild(aDiv);
+        var restart = document.querySelector('span.restart');
+        restart.onclick = function(){
+            Init();
+        };
+
     }
 }
 
@@ -613,14 +614,15 @@ Boss.prototype={
         aH.innerHTML = 'Game Over';
         aSpa.innerHTML = '重新开始';
         aP.innerHTML = '您的得分是<span>&nbsp'+score+'</span>';
-        aSpa.onclick = function(){
-            Init();
-        };
         aDiv.className = 'gameover';
         aH.className = 'animated rubberBand';
         aDiv.appendChild(aH);
         aDiv.appendChild(aP);
         aDiv.appendChild(aSpa);
         aBox.appendChild(aDiv);
+        var restart = document.querySelector('span.restart');
+        restart.onclick = function() {
+            Init();
+        }
     }
 }
