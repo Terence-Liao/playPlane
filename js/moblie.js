@@ -175,7 +175,7 @@ function Plane(mouse,plaeImg,aBox,index,bluSrc){
 
              This.aPlane.style.left  = left_ + 'px';
              This.aPlane.style.top = top_ +'px';
-           /*  document.addEventListener('touchstart', function(event) {
+             document.addEventListener('touchstart', function(event) {
                  // 判断默认行为是否可以被禁用
                  if (event.cancelable) {
                      // 判断默认行为是否已经被禁用
@@ -183,7 +183,7 @@ function Plane(mouse,plaeImg,aBox,index,bluSrc){
                          event.preventDefault();
                      }
                  }
-             }, false);*/
+             },  { passive: false });
 
          }
      }
