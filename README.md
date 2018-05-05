@@ -7,7 +7,7 @@
 ### 注意
 
 此项目刚开始会点显示慢卡！需要缓存！强烈建议使用chrome、fireFox、UC等浏览器运行
-vw、vh等暂时不是兼容ios7,8,9的Safari的浏览器，所以不显示！拒绝IE从我做起:muscle:!
+由于vw、vh等暂时不是兼容ios7,8,9的Safari的浏览器，所以不显示！拒绝IE从我做起:muscle:!
 
 
 ### 效果演示
